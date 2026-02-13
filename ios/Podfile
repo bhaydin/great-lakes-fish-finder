@@ -1,0 +1,10 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native/scripts/react_native_pods'
+
+platform :ios, '13.0'
+
+target 'GreatLakesFishFinder' do
+  use_react_native!(:path => '../node_modules/react-native')
+  
+  # Pods for GreatLakesFishFinder
+end

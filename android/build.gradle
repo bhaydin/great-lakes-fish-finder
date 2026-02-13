@@ -1,0 +1,46 @@
+apply plugin: "com.android.application"
+apply plugin: "com.facebook.react"
+
+react {
+    /* Folders */
+    root = rootProject.file("../")
+    reactNativeDir = rootProject.file("../node_modules/react-native")
+    codegenDir = rootProject.file("../node_modules/@react-native/codegen")
+}
+
+android {
+    namespace "com.greatlakesfishfinder"
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.greatlakesfishfinder"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "com.facebook.react:react-android"
+}
