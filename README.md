@@ -47,7 +47,7 @@ Powered by Microsoft Agent Framework, coordinating multiple specialized agents:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/bhaydin/great-lakes-fish-finder.git
+git clone <repository-url>
 cd great-lakes-fish-finder
 ```
 
